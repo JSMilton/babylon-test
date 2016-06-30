@@ -8,8 +8,12 @@
 
 import UIKit
 import PureLayout
+import RealmSwift
 
-class PostDetailViewController: UIViewController {
+class PostDetailViewController: UIViewController, LoadingViewControllerType {
+    
+    var screenTitle: String = "Post Detail"
+    var loadingTitle = "Loading updated comments..."
     
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -46,17 +50,11 @@ class PostDetailViewController: UIViewController {
         return label
     }()
     
-    lazy var activityIndicatorView: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
-        return view
-    }()
+    let viewModel: PostDetailViewModel
+    var notificationToken: NotificationToken?
     
-    let post: Post
-    let user: User
-    
-    init(post: Post, user: User) {
-        self.post = post
-        self.user = user
+    init(viewModel: PostDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,10 +64,10 @@ class PostDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Post Detail"
         view.backgroundColor = UIColor.whiteColor()
         view.addSubview(stackView)
-        stackView.autoPinEdgesToSuperviewMarginsExcludingEdge(.Top)
+        stackView.autoPinEdgeToSuperviewMargin(.Leading)
+        stackView.autoPinEdgeToSuperviewMargin(.Trailing)
         stackView.autoPinToTopLayoutGuideOfViewController(self, withInset: 20)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(bodyLabel)
@@ -80,11 +78,33 @@ class PostDetailViewController: UIViewController {
             self.titleLabel.autoSetContentHuggingPriorityForAxis(.Vertical)
             self.bodyLabel.autoSetContentHuggingPriorityForAxis(.Vertical)
             self.usernameLabel.autoSetContentHuggingPriorityForAxis(.Vertical)
+            self.commentsLabel.autoSetContentHuggingPriorityForAxis(.Vertical)
         }
         
-        titleLabel.text = "Title:\n" + post.title
-        bodyLabel.text = "Body:\n" + post.body
-        usernameLabel.text = "Username:\n" + user.username
+        titleLabel.text = "Title:\n" + viewModel.post.title
+        bodyLabel.text = "Body:\n" + viewModel.post.body
+        usernameLabel.text = "Username:\n" + viewModel.user.username
+        
+        notificationToken = viewModel.comments?.addNotificationBlock { _ in
+            self.updateCommentsLabel()
+        }
+        
+        viewModel.load {
+            self.setLoading(false)
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if viewModel.loading {
+            setLoading(true)
+        }
+    }
+    
+    func updateCommentsLabel() {
+        let filteredComments = viewModel.comments?.filter { $0.postId == viewModel.post.id }
+        guard let count = filteredComments?.count else { return }
+        commentsLabel.text = "\(count) comments for this post"
     }
 
 }

@@ -11,6 +11,7 @@ import PureLayout
 
 protocol LoadingViewControllerType {
     var screenTitle: String { get }
+    var loadingTitle: String { get }
     func setLoading(loading: Bool)
 }
 
@@ -79,11 +80,8 @@ class LoadingViewController: UIViewController {
         NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) { () -> Void in
             self.loadingView.autoSetContentHuggingPriorityForAxis(.Vertical)
         }
-//
-//        let navItem = childController.getNavigationItem()
-//        navigationItem.rightBarButtonItem = navItem.rightBarButtonItem
-//        navigationItem.leftBarButtonItem = navItem.leftBarButtonItem
-//        
+        
         title = childController.screenTitle
+        loadingView.label.text = childController.loadingTitle
     }
 }

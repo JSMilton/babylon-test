@@ -12,6 +12,7 @@ import RealmSwift
 class PostViewController: UITableViewController, LoadingViewControllerType {
     
     var screenTitle = "Posts"
+    var loadingTitle = "Fetching new posts..."
     let viewModel = PostViewModel()
     var notificationToken: NotificationToken?
 
@@ -52,8 +53,10 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
         let post = viewModel.posts[indexPath.row]
         let user = self.viewModel.users.filter { $0.id == post.userId }.first
         if let user = user {
-            let detailController = PostDetailViewController(post: post, user: user)
-            navigationController?.pushViewController(detailController, animated: true)
+            let detailModel = PostDetailViewModel(post: post, user: user)
+            let detailController = PostDetailViewController(viewModel: detailModel)
+            let loadingController = LoadingViewController(childController: detailController)
+            navigationController?.pushViewController(loadingController, animated: true)
         } else {
             return
         }

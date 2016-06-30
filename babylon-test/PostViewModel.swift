@@ -9,12 +9,12 @@
 import Foundation
 import RealmSwift
 
-final class PostViewModel {
+final class PostViewModel: ViewModelType {
     
     var loading = false
     var users: Results<User>
     var posts: Results<Post>
-    let webService = WebService()
+    var webService = WebService()
     
     init() {
         let realm = try! Realm()
@@ -22,39 +22,20 @@ final class PostViewModel {
         self.posts = realm.objects(Post.self)
     }
     
-    
     func load(completion:(()->())?) {
         loading = true
         webService.load(User.all) { users in
             self.webService.load(Post.all) { posts in
                 if let users = users, posts = posts {
-                    self.updateRealm(users, posts: posts)
+                    var allObjects = [Object]()
+                    allObjects.appendContentsOf(users as [Object])
+                    allObjects.appendContentsOf(posts as [Object])
+                    self.updateObjects(allObjects)
                 } else {
                     // handle error
                 }
                 self.loading = false
                 completion?()
-            }
-        }
-    }
-    
-    func updateRealm(users: [User], posts: [Post]) {
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-        dispatch_async(queue) {
-            do {
-                let realm = try Realm()
-                try realm.write {
-                    for user in users {
-                        realm.add(user, update: true)
-                    }
-                    
-                    for post in posts {
-                        realm.add(post, update: true)
-                    }
-                }
-                
-            } catch {
-                // handle error
             }
         }
     }
