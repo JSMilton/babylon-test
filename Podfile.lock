@@ -1,0 +1,23 @@
+PODS:
+  - PureLayout (3.0.1)
+  - Realm (1.0.0):
+    - Realm/Headers (= 1.0.0)
+  - Realm/Headers (1.0.0)
+  - RealmSwift (1.0.0):
+    - Realm (= 1.0.0)
+  - Unbox (1.7)
+
+DEPENDENCIES:
+  - PureLayout
+  - RealmSwift
+  - Unbox
+
+SPEC CHECKSUMS:
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
+  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
+  Unbox: 576f1470399f84c411ced0a8ce4c4caaeb8acf1d
+
+PODFILE CHECKSUM: 99383dbc9f095da0452e785ab22cdef63f8a3f15
+
+COCOAPODS: 1.0.0
