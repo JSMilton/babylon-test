@@ -28,7 +28,6 @@ extension Results {
                 tableView.endUpdates()
                 break
             case .Error(let err):
-                // An error occurred while opening the Realm file on the background worker thread
                 fatalError("\(err)")
                 break
             }

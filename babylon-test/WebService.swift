@@ -6,7 +6,7 @@
 //  Copyright © 2016 james milton. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias JSONDictionary = [String: AnyObject]
 
@@ -26,9 +26,13 @@ final class WebService {
             return
         }
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         NSURLSession.sharedSession().dataTaskWithURL(url) { data, _, _ in
-            let result = data.flatMap(resource.parse)
-            completion(result)
+            dispatch_async(dispatch_get_main_queue(), { 
+                let result = data.flatMap(resource.parse)
+                completion(result)
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            })
         }.resume()
     }
 }

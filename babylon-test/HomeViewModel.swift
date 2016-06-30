@@ -9,22 +9,21 @@
 import Foundation
 import RealmSwift
 
-final class HomeLoader {
+final class HomeViewModel {
     
+    var loading = false
+    var users: Results<User>
+    var posts: Results<Post>
     let webService = WebService()
     
-    func getCached() -> (Results<User>?, Results<Post>?) {
-        do {
-            let realm = try Realm()
-            let users = realm.objects(User.self)
-            let posts = realm.objects(Post.self)
-            return (users, posts)
-        } catch {
-            return (nil, nil)
-        }
+    init() {
+        let realm = try! Realm()
+        self.users = realm.objects(User.self)
+        self.posts = realm.objects(Post.self)
     }
     
-    func load() {
+    func load(completion:(()->())?) {
+        loading = true
         webService.load(User.all) { users in
             self.webService.load(Post.all) { posts in
                 if let users = users, posts = posts {
@@ -32,6 +31,8 @@ final class HomeLoader {
                 } else {
                     // handle error
                 }
+                self.loading = false
+                completion?()
             }
         }
     }

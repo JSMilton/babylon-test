@@ -9,40 +9,41 @@
 import UIKit
 import RealmSwift
 
-class HomeViewController: UITableViewController {
+class HomeViewController: UITableViewController, LoadingViewControllerType {
     
-    let loader = HomeLoader()
-    var users: Results<User>?
-    var posts: Results<Post>?
+    var screenTitle = "Home"
+    let viewModel = HomeViewModel()
     var notificationToken: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
-        title = "Home"
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
+        tableView.tableFooterView = UIView(frame: CGRectMake(0,0,0,CGFloat.min))
         tableView.registerClass(HomeTableViewCell.self, forCellReuseIdentifier: String(HomeTableViewCell))
         
-        users = loader.getCached().0
-        posts = loader.getCached().1
-        
-        if let posts = posts {
-            notificationToken = posts.setupNotificationBlock(tableView)
+        notificationToken = viewModel.posts.setupNotificationBlock(self.tableView)
+        viewModel.load() { [weak self] in
+            self?.setLoading(false)
         }
-        
-        loader.load()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if viewModel.loading {
+            setLoading(true)
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts?.count ?? 0
+        return viewModel.posts.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell = tableView.appDequeueReusableCellForIndexPath(indexPath: indexPath)
-        cell.titleLabel.text = posts?[indexPath.row].title
-        cell.detailLabel.text = posts?[indexPath.row].body
+        cell.titleLabel.text = viewModel.posts[indexPath.row].title
         cell.accessoryType = .DisclosureIndicator
         return cell
     }
