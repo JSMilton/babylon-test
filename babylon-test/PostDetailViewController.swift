@@ -89,8 +89,11 @@ class PostDetailViewController: UIViewController, LoadingViewControllerType {
             self?.updateCommentsLabel()
         }
         
-        viewModel.load { [weak self] in
+        viewModel.load { [weak self] error in
             self?.setLoading(false)
+            if let error = error {
+                self?.showError(error)
+            }
         }
     }
     

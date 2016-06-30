@@ -24,4 +24,16 @@ extension UIViewController {
         viewController.view.removeFromSuperview()
         viewController.removeFromParentViewController()
     }
+    
+    func showError(error: Error) {
+        showAlertWithTitle("Uh oh!", message: error.rawValue)
+    }
+    
+    func showAlertWithTitle(title: String?, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
+        alertController.addAction(action)
+        alertController.modalPresentationStyle = .CurrentContext
+        presentViewController(alertController, animated: true, completion: nil)
+    }
 }

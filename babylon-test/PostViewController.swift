@@ -39,8 +39,11 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
         self.refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: .ValueChanged)
         
         notificationToken = viewModel.posts.setupNotificationBlock(self.tableView)
-        viewModel.load() { [weak self] in
+        viewModel.load() { [weak self] error in
             self?.setLoading(false)
+            if let error = error {
+                self?.showError(error)
+            }
         }
     }
     
@@ -57,8 +60,11 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
             return
         }
         
-        viewModel.load { [weak self] in
+        viewModel.load { [weak self] error in
             self?.refreshControl?.endRefreshing()
+            if let error = error {
+                self?.showError(error)
+            }
         }
     }
     

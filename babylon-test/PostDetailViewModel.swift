@@ -25,14 +25,14 @@ class PostDetailViewModel: ViewModelType {
         self.comments = realm.objects(Comment.self)
     }
     
-    func load(completion: (()->())?) {
+    func load(completion: ((Error?)->())?) {
         loading = true
-        webService.load(Comment.all) { comments in
+        webService.load(Comment.all) { (comments, error) in
             if let comments = comments {
                 self.updateObjects(comments as [Object])
             }
             
-            completion?()
+            completion?(error)
         }
     }
 

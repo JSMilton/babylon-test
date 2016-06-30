@@ -21,12 +21,14 @@ extension LoadingViewControllerType where Self: UIViewController {
         
         if loading {
             parent.loadingView.activityIndicator.startAnimating()
-        } else {
-            parent.loadingView.activityIndicator.stopAnimating()
         }
         
-        UIView.animateWithDuration(0.25) { 
+        UIView.animateWithDuration(0.3, animations: { 
             parent.loadingView.hidden = !loading
+        }) { _ in
+            if !loading {
+                parent.loadingView.activityIndicator.stopAnimating()
+            }
         }
     }
 }

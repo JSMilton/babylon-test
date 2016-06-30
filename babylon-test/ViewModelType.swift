@@ -12,7 +12,7 @@ import RealmSwift
 protocol ViewModelType {
     var loading: Bool { get }
     var webService: WebService { get set }
-    func load(completion: (()->())?)
+    func load(completion: ((Error?)->())?)
     func updateObjects(objects: [Object])
 }
 

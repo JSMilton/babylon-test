@@ -22,20 +22,19 @@ final class PostViewModel: ViewModelType {
         self.posts = realm.objects(Post.self)
     }
     
-    func load(completion:(()->())?) {
+    func load(completion:((Error?)->())?) {
         loading = true
-        webService.load(User.all) { users in
-            self.webService.load(Post.all) { posts in
+        webService.load(User.all) { (users, error) in
+            self.webService.load(Post.all) { (posts, error) in
                 if let users = users, posts = posts {
                     var allObjects = [Object]()
                     allObjects.appendContentsOf(users as [Object])
                     allObjects.appendContentsOf(posts as [Object])
                     self.updateObjects(allObjects)
-                } else {
-                    // handle error
                 }
+                
+                completion?(error)
                 self.loading = false
-                completion?()
             }
         }
     }

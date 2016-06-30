@@ -20,11 +20,11 @@ extension Results {
             case .Update(_, let deletions, let insertions, let modifications):
                 tableView.beginUpdates()
                 tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: 0) },
-                    withRowAnimation: .Automatic)
+                    withRowAnimation: .Fade)
                 tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: 0) },
-                    withRowAnimation: .Automatic)
+                    withRowAnimation: .Fade)
                 tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: 0) },
-                    withRowAnimation: .Automatic)
+                    withRowAnimation: .Fade)
                 tableView.endUpdates()
                 break
             case .Error(let err):
