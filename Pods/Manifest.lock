@@ -1,10 +1,10 @@
 PODS:
-  - PureLayout (3.0.1)
-  - Realm (1.0.0):
-    - Realm/Headers (= 1.0.0)
-  - Realm/Headers (1.0.0)
-  - RealmSwift (1.0.0):
-    - Realm (= 1.0.0)
+  - PureLayout (3.0.2)
+  - Realm (1.0.1):
+    - Realm/Headers (= 1.0.1)
+  - Realm/Headers (1.0.1)
+  - RealmSwift (1.0.1):
+    - Realm (= 1.0.1)
   - Unbox (1.7)
 
 DEPENDENCIES:
@@ -13,9 +13,9 @@ DEPENDENCIES:
   - Unbox
 
 SPEC CHECKSUMS:
-  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
-  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
+  RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   Unbox: 576f1470399f84c411ced0a8ce4c4caaeb8acf1d
 
 PODFILE CHECKSUM: 99383dbc9f095da0452e785ab22cdef63f8a3f15
