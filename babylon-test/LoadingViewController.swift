@@ -72,7 +72,10 @@ class LoadingViewController: UIViewController {
         stackView.autoPinToBottomLayoutGuideOfViewController(self, withInset: 0)
         containerAddChildViewController(childController as! UIViewController, toView: containerView)
         
-        loadingView.autoSetDimension(.Height, toSize: 50)
+        NSLayoutConstraint.autoSetPriority(999) { 
+            self.loadingView.autoSetDimension(.Height, toSize: 50)
+        }
+        
         NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) { () -> Void in
             self.loadingView.autoSetContentHuggingPriorityForAxis(.Vertical)
         }

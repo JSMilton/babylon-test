@@ -9,10 +9,10 @@
 import UIKit
 import RealmSwift
 
-class HomeViewController: UITableViewController, LoadingViewControllerType {
+class PostViewController: UITableViewController, LoadingViewControllerType {
     
-    var screenTitle = "Home"
-    let viewModel = HomeViewModel()
+    var screenTitle = "Posts"
+    let viewModel = PostViewModel()
     var notificationToken: NotificationToken?
 
     override func viewDidLoad() {
@@ -46,6 +46,18 @@ class HomeViewController: UITableViewController, LoadingViewControllerType {
         cell.titleLabel.text = viewModel.posts[indexPath.row].title
         cell.accessoryType = .DisclosureIndicator
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let post = viewModel.posts[indexPath.row]
+        let user = self.viewModel.users.filter { $0.id == post.userId }.first
+        if let user = user {
+            let detailController = PostDetailViewController(post: post, user: user)
+            navigationController?.pushViewController(detailController, animated: true)
+        } else {
+            return
+        }
+        
     }
 
 }

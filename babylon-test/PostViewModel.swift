@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class HomeViewModel {
+final class PostViewModel {
     
     var loading = false
     var users: Results<User>
@@ -21,6 +21,7 @@ final class HomeViewModel {
         self.users = realm.objects(User.self)
         self.posts = realm.objects(Post.self)
     }
+    
     
     func load(completion:(()->())?) {
         loading = true
