@@ -85,12 +85,12 @@ class PostDetailViewController: UIViewController, LoadingViewControllerType {
         bodyLabel.text = "Body:\n" + viewModel.post.body
         usernameLabel.text = "Username:\n" + viewModel.user.username
         
-        notificationToken = viewModel.comments?.addNotificationBlock { _ in
-            self.updateCommentsLabel()
+        notificationToken = viewModel.comments?.addNotificationBlock { [weak self] _ in
+            self?.updateCommentsLabel()
         }
         
-        viewModel.load {
-            self.setLoading(false)
+        viewModel.load { [weak self] in
+            self?.setLoading(false)
         }
     }
     

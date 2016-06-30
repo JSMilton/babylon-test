@@ -57,8 +57,8 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
             return
         }
         
-        viewModel.load {
-            self.refreshControl?.endRefreshing()
+        viewModel.load { [weak self] in
+            self?.refreshControl?.endRefreshing()
         }
     }
     
