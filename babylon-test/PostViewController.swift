@@ -23,7 +23,7 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         tableView.tableFooterView = UIView(frame: CGRectMake(0,0,0,CGFloat.min))
-        tableView.registerClass(HomeTableViewCell.self, forCellReuseIdentifier: String(HomeTableViewCell))
+        tableView.registerClass(PostTableViewCell.self, forCellReuseIdentifier: String(PostTableViewCell))
         
         notificationToken = viewModel.posts.setupNotificationBlock(self.tableView)
         viewModel.load() { [weak self] in
@@ -43,7 +43,7 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: HomeTableViewCell = tableView.appDequeueReusableCellForIndexPath(indexPath: indexPath)
+        let cell: PostTableViewCell = tableView.appDequeueReusableCellForIndexPath(indexPath: indexPath)
         cell.titleLabel.text = viewModel.posts[indexPath.row].title
         cell.accessoryType = .DisclosureIndicator
         return cell

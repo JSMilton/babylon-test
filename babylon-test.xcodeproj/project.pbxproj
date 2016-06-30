@@ -10,7 +10,7 @@
 		03B63AA32618854DBA9EFD2C /* Pods_babylon_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4DC9E76BC188377556AD94 /* Pods_babylon_test.framework */; };
 		4F2AA6B11D2550E4009B82B3 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B01D2550E4009B82B3 /* PostViewModel.swift */; };
 		4F2AA6B31D25580B009B82B3 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B21D25580B009B82B3 /* RealmExtensions.swift */; };
-		4F2AA6B51D255B61009B82B3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B41D255B61009B82B3 /* HomeTableViewCell.swift */; };
+		4F2AA6B51D255B61009B82B3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B41D255B61009B82B3 /* PostTableViewCell.swift */; };
 		4F2AA6B71D255C88009B82B3 /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B61D255C88009B82B3 /* TableViewExtensions.swift */; };
 		4F2AA6B91D256ABF009B82B3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B81D256ABF009B82B3 /* LoadingView.swift */; };
 		4F2AA6BB1D256B26009B82B3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6BA1D256B26009B82B3 /* LoadingViewController.swift */; };
@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		4F2AA6B01D2550E4009B82B3 /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		4F2AA6B21D25580B009B82B3 /* RealmExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
-		4F2AA6B41D255B61009B82B3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		4F2AA6B41D255B61009B82B3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		4F2AA6B61D255C88009B82B3 /* TableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
 		4F2AA6B81D256ABF009B82B3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F2AA6BA1D256B26009B82B3 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +72,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F2AA6C81D25B1E8009B82B3 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				4F7F01721D2522CE0036E052 /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		4F2AA6C91D25B1EF009B82B3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F2AA6CE1D25B271009B82B3 /* Post View Controller */,
+				4F2AA6CD1D25B262009B82B3 /* Post Detail View Controller */,
+				4F2AA6CF1D25B280009B82B3 /* Loading View Controller */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4F2AA6CA1D25B201009B82B3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4FF198FE1D254AF600240FAE /* Endpoints.swift */,
+				4FF198F21D25274600240FAE /* WebService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4F2AA6CB1D25B20B009B82B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FF198F41D252BD900240FAE /* User.swift */,
+				4FF198F61D252BDF00240FAE /* Post.swift */,
+				4FF198F81D252BE500240FAE /* Comment.swift */,
+				4FF198FA1D252CCD00240FAE /* UserAddress.swift */,
+				4FF198FC1D252CE100240FAE /* UserCompany.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4F2AA6CC1D25B23B009B82B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F2AA6B21D25580B009B82B3 /* RealmExtensions.swift */,
+				4F2AA6B61D255C88009B82B3 /* TableViewExtensions.swift */,
+				4F2AA6BC1D2573E7009B82B3 /* UIViewControllerExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4F2AA6CD1D25B262009B82B3 /* Post Detail View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F2AA6C01D257F6E009B82B3 /* PostDetailViewController.swift */,
+				4F2AA6C41D25A2CC009B82B3 /* PostDetailViewModel.swift */,
+			);
+			name = "Post Detail View Controller";
+			sourceTree = "<group>";
+		};
+		4F2AA6CE1D25B271009B82B3 /* Post View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F2AA6B41D255B61009B82B3 /* PostTableViewCell.swift */,
+				4F7F01741D2522CE0036E052 /* PostViewController.swift */,
+				4F2AA6B01D2550E4009B82B3 /* PostViewModel.swift */,
+			);
+			name = "Post View Controller";
+			sourceTree = "<group>";
+		};
+		4F2AA6CF1D25B280009B82B3 /* Loading View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F2AA6B81D256ABF009B82B3 /* LoadingView.swift */,
+				4F2AA6BA1D256B26009B82B3 /* LoadingViewController.swift */,
+			);
+			name = "Loading View Controller";
+			sourceTree = "<group>";
+		};
+		4F2AA6D01D25B294009B82B3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4F2AA6C61D25A3C2009B82B3 /* ViewModelType.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		4F7F01661D2522CE0036E052 = {
 			isa = PBXGroup;
 			children = (
@@ -93,25 +178,12 @@
 		4F7F01711D2522CE0036E052 /* babylon-test */ = {
 			isa = PBXGroup;
 			children = (
-				4F7F01721D2522CE0036E052 /* AppDelegate.swift */,
-				4F7F01741D2522CE0036E052 /* PostViewController.swift */,
-				4F2AA6B01D2550E4009B82B3 /* PostViewModel.swift */,
-				4F2AA6C01D257F6E009B82B3 /* PostDetailViewController.swift */,
-				4F2AA6C41D25A2CC009B82B3 /* PostDetailViewModel.swift */,
-				4F2AA6C61D25A3C2009B82B3 /* ViewModelType.swift */,
-				4FF198F21D25274600240FAE /* WebService.swift */,
-				4FF198F41D252BD900240FAE /* User.swift */,
-				4FF198F61D252BDF00240FAE /* Post.swift */,
-				4FF198F81D252BE500240FAE /* Comment.swift */,
-				4FF198FA1D252CCD00240FAE /* UserAddress.swift */,
-				4FF198FC1D252CE100240FAE /* UserCompany.swift */,
-				4FF198FE1D254AF600240FAE /* Endpoints.swift */,
-				4F2AA6B21D25580B009B82B3 /* RealmExtensions.swift */,
-				4F2AA6B61D255C88009B82B3 /* TableViewExtensions.swift */,
-				4F2AA6B41D255B61009B82B3 /* HomeTableViewCell.swift */,
-				4F2AA6B81D256ABF009B82B3 /* LoadingView.swift */,
-				4F2AA6BA1D256B26009B82B3 /* LoadingViewController.swift */,
-				4F2AA6BC1D2573E7009B82B3 /* UIViewControllerExtensions.swift */,
+				4F2AA6C81D25B1E8009B82B3 /* App Delegate */,
+				4F2AA6C91D25B1EF009B82B3 /* View Controllers */,
+				4F2AA6D01D25B294009B82B3 /* Protocols */,
+				4F2AA6CA1D25B201009B82B3 /* Services */,
+				4F2AA6CB1D25B20B009B82B3 /* Models */,
+				4F2AA6CC1D25B23B009B82B3 /* Extensions */,
 				4F7F01791D2522CE0036E052 /* Assets.xcassets */,
 				4F7F017B1D2522CE0036E052 /* LaunchScreen.storyboard */,
 				4F7F017E1D2522CE0036E052 /* Info.plist */,
@@ -268,7 +340,7 @@
 				4FF198F91D252BE500240FAE /* Comment.swift in Sources */,
 				4F2AA6B91D256ABF009B82B3 /* LoadingView.swift in Sources */,
 				4FF198F31D25274600240FAE /* WebService.swift in Sources */,
-				4F2AA6B51D255B61009B82B3 /* HomeTableViewCell.swift in Sources */,
+				4F2AA6B51D255B61009B82B3 /* PostTableViewCell.swift in Sources */,
 				4F7F01751D2522CE0036E052 /* PostViewController.swift in Sources */,
 				4F7F01731D2522CE0036E052 /* AppDelegate.swift in Sources */,
 				4FF198FF1D254AF600240FAE /* Endpoints.swift in Sources */,

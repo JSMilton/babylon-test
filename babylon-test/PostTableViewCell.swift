@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class HomeTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
 
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
