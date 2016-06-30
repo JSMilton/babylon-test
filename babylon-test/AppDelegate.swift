@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let postContainer = LoadingViewController(childController: PostViewController())
+        let postController = PostViewController(viewModel: PostViewModel())
+        let postContainer = LoadingViewController(childController: postController)
         let rootController = UINavigationController(rootViewController: postContainer)
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = rootController

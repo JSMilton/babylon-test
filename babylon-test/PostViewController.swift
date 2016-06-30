@@ -13,11 +13,21 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
     
     var screenTitle = "Posts"
     var loadingTitle = "Fetching new posts..."
-    let viewModel = PostViewModel()
+    let viewModel: PostViewModel
     var notificationToken: NotificationToken?
+    
+    init(viewModel: PostViewModel) {
+        self.viewModel = viewModel
+        super.init(style: .Plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.whiteColor()
         
         tableView.rowHeight = UITableViewAutomaticDimension
