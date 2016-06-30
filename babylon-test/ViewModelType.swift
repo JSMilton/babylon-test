@@ -23,9 +23,7 @@ extension ViewModelType {
             do {
                 let realm = try Realm()
                 try realm.write {
-                    for object in objects {
-                        realm.add(object, update: true)
-                    }
+                    realm.add(objects, update: true)
                 }
             } catch {
                 // handle error
