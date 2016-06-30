@@ -35,6 +35,9 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
         tableView.tableFooterView = UIView(frame: CGRectMake(0,0,0,CGFloat.min))
         tableView.registerClass(PostTableViewCell.self, forCellReuseIdentifier: String(PostTableViewCell))
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: .ValueChanged)
+        
         notificationToken = viewModel.posts.setupNotificationBlock(self.tableView)
         viewModel.load() { [weak self] in
             self?.setLoading(false)
@@ -45,6 +48,17 @@ class PostViewController: UITableViewController, LoadingViewControllerType {
         super.viewWillAppear(animated)
         if viewModel.loading {
             setLoading(true)
+        }
+    }
+    
+    func refresh() {
+        if viewModel.loading {
+            self.refreshControl?.endRefreshing()
+            return
+        }
+        
+        viewModel.load {
+            self.refreshControl?.endRefreshing()
         }
     }
     
