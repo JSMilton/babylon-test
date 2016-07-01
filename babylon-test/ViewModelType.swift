@@ -26,7 +26,7 @@ extension ViewModelType {
                     realm.add(objects, update: true)
                 }
             } catch {
-                // handle error
+                print(error)
             }
         }
     }
