@@ -27,10 +27,8 @@ final class PostViewModel: ViewModelType {
         webService.load(User.all) { (users, error) in
             self.webService.load(Post.all) { (posts, error) in
                 if let users = users, posts = posts {
-                    var allObjects = [Object]()
-                    allObjects.appendContentsOf(users as [Object])
-                    allObjects.appendContentsOf(posts as [Object])
-                    self.updateObjects(allObjects)
+                    self.updateObjects(users)
+                    self.updateObjects(posts)
                 }
                 
                 completion?(error)

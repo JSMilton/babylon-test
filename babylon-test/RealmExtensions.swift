@@ -31,7 +31,7 @@ extension Results {
                 
                 // So Realm sends a modification update for every object, regardless of whether or not it has
                 // changed. Seems that reloading that many rows causes afwul performance in the tables reloading
-                // animation. That's why the above code is commented. Doing a full reload has excellent performance.
+                // animation. That's why the above code is commented. Doing a full reload has much better performance.
                 // Probably a way around it, but I haven't had a chance to find it yet.
                 break
             case .Error(let err):

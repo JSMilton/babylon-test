@@ -10,12 +10,6 @@ import UIKit
 import PureLayout
 
 class PostTableViewCell: UITableViewCell {
-
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .Vertical
-        return stackView
-    }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -26,9 +20,8 @@ class PostTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(stackView)
-        stackView.autoPinEdgesToSuperviewMargins()
-        stackView.addArrangedSubview(titleLabel)
+        contentView.addSubview(titleLabel)
+        titleLabel.autoPinEdgesToSuperviewMargins()
     }
     
     required init?(coder aDecoder: NSCoder) {

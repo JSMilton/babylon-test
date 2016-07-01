@@ -29,7 +29,7 @@ class PostDetailViewModel: ViewModelType {
         loading = true
         webService.load(Comment.all) { (comments, error) in
             if let comments = comments {
-                self.updateObjects(comments as [Object])
+                self.updateObjects(comments)
             }
             
             completion?(error)
