@@ -81,9 +81,9 @@ class PostDetailViewController: UIViewController, LoadingViewControllerType {
             self.commentsLabel.autoSetContentHuggingPriorityForAxis(.Vertical)
         }
         
-        titleLabel.text = "Title:\n" + viewModel.post.title
-        bodyLabel.text = "Body:\n" + viewModel.post.body
-        usernameLabel.text = "Username:\n" + viewModel.user.username
+        titleLabel.text = "Title:\n" + (viewModel.post.title ?? "")
+        bodyLabel.text = "Body:\n" + (viewModel.post.body ?? "")
+        usernameLabel.text = "Username:\n" + (viewModel.user.username ?? "")
         
         notificationToken = viewModel.comments?.addNotificationBlock { [weak self] _ in
             self?.updateCommentsLabel()

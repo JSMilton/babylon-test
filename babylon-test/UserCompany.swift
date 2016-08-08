@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 import Unbox
 
-final class UserCompany: Object, Unboxable {
+class UserCompany: Object, Unboxable {
     
-    dynamic var name = ""
-    dynamic var catchphrase = ""
-    dynamic var bs = ""
+    dynamic var name: String?
+    dynamic var catchphrase: String?
+    dynamic var bs: String?
     
     required convenience init(unboxer: Unboxer) {
         self.init()

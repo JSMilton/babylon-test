@@ -10,12 +10,12 @@ import Foundation
 import RealmSwift
 import Unbox
 
-final class Post: Object, Unboxable {
+class Post: Object, Unboxable {
     
     dynamic var id = 0
     dynamic var userId = 0
-    dynamic var title = ""
-    dynamic var body = ""
+    dynamic var title: String?
+    dynamic var body: String?
     
     required convenience init(unboxer: Unboxer) {
         self.init()

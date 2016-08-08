@@ -14,9 +14,9 @@ class Comment: Object, Unboxable {
     
     dynamic var id = 0
     dynamic var postId = 0
-    dynamic var name = ""
-    dynamic var email = ""
-    dynamic var body = ""
+    dynamic var name: String?
+    dynamic var email: String?
+    dynamic var body: String?
     
     required convenience init(unboxer: Unboxer) {
         self.init()

@@ -10,15 +10,15 @@ import Foundation
 import RealmSwift
 import Unbox
 
-final class User: Object, Unboxable {
+class User: Object, Unboxable {
     
     dynamic var id = 0
-    dynamic var name: String = ""
-    dynamic var username: String = ""
-    dynamic var email: String = ""
+    dynamic var name: String?
+    dynamic var username: String?
+    dynamic var email: String?
     dynamic var address: UserAddress?
-    dynamic var phone: String = ""
-    dynamic var website: String = ""
+    dynamic var phone: String?
+    dynamic var website: String?
     dynamic var company: UserCompany?
     
     required convenience init(unboxer: Unboxer) {

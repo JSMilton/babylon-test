@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class PostViewModel {
+class PostViewModel {
     
     var loading = false
     var users: Results<User>

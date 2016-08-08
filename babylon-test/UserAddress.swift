@@ -10,13 +10,13 @@ import Foundation
 import RealmSwift
 import Unbox
 
-final class UserAddress: Object, Unboxable {
-    dynamic var street = ""
-    dynamic var suite = ""
-    dynamic var city = ""
-    dynamic var zipcode = ""
-    dynamic var geoLat = ""
-    dynamic var geoLong = ""
+class UserAddress: Object, Unboxable {
+    dynamic var street: String?
+    dynamic var suite: String?
+    dynamic var city: String?
+    dynamic var zipcode: String?
+    dynamic var geoLat: String?
+    dynamic var geoLong: String?
     
     required convenience init(unboxer: Unboxer) {
         self.init()

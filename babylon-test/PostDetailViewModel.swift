@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class PostDetailViewModel {
+class PostDetailViewModel {
     
     let post: Post
     let user: User
