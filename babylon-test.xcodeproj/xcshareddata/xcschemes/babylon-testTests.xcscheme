@@ -61,6 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BEAD3AE21D58E06000C5E772"
+            BuildableName = "babylon-testTests.xctest"
+            BlueprintName = "babylon-testTests"
+            ReferencedContainer = "container:babylon-test.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
