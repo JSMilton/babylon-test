@@ -15,7 +15,7 @@ struct Resource<A> {
     let parse: NSData -> A?
 }
 
-final class WebService {
+final class AppWebService: WebService {
     
     let baseURL = "http://jsonplaceholder.typicode.com"
     

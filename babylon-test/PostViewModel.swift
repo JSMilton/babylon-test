@@ -14,7 +14,7 @@ final class PostViewModel: ViewModelType {
     var loading = false
     var users: Results<User>
     var posts: Results<Post>
-    var webService = WebService()
+    var httpClient = HTTPClient(webService: AppWebService())
     
     init() {
         let realm = try! Realm()
@@ -24,8 +24,8 @@ final class PostViewModel: ViewModelType {
     
     func load(completion:((Error?)->())?) {
         loading = true
-        webService.load(User.all) { (users, error) in
-            self.webService.load(Post.all) { (posts, error) in
+        httpClient.load(User.all) { (users, error) in
+            self.httpClient.load(Post.all) { (posts, error) in
                 if let users = users, posts = posts {
                     self.updateObjects(users)
                     self.updateObjects(posts)

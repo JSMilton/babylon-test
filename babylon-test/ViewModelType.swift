@@ -11,12 +11,13 @@ import RealmSwift
 
 protocol ViewModelType {
     var loading: Bool { get }
-    var webService: WebService { get set }
+    var httpClient: HTTPClient { get set }
     func load(completion: ((Error?)->())?)
     func updateObjects(objects: [Object])
 }
 
 extension ViewModelType {
+    
     func updateObjects(objects: [Object]) {
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue) {

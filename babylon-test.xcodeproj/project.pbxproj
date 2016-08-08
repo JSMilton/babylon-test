@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03B63AA32618854DBA9EFD2C /* Pods_babylon_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4DC9E76BC188377556AD94 /* Pods_babylon_test.framework */; };
+		4F19606A1D588819006B0804 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1960691D588819006B0804 /* HTTPClient.swift */; };
 		4F2AA6B11D2550E4009B82B3 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B01D2550E4009B82B3 /* PostViewModel.swift */; };
 		4F2AA6B31D25580B009B82B3 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B21D25580B009B82B3 /* RealmExtensions.swift */; };
 		4F2AA6B51D255B61009B82B3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6B41D255B61009B82B3 /* PostTableViewCell.swift */; };
@@ -23,7 +24,7 @@
 		4F7F017A1D2522CE0036E052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F01791D2522CE0036E052 /* Assets.xcassets */; };
 		4F7F017D1D2522CE0036E052 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F017B1D2522CE0036E052 /* LaunchScreen.storyboard */; };
 		4FCF69CB1D25BC78003C9776 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCF69CA1D25BC78003C9776 /* Errors.swift */; };
-		4FF198F31D25274600240FAE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198F21D25274600240FAE /* WebService.swift */; };
+		4FF198F31D25274600240FAE /* AppWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198F21D25274600240FAE /* AppWebService.swift */; };
 		4FF198F51D252BD900240FAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198F41D252BD900240FAE /* User.swift */; };
 		4FF198F71D252BDF00240FAE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198F61D252BDF00240FAE /* Post.swift */; };
 		4FF198F91D252BE500240FAE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198F81D252BE500240FAE /* Comment.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F1960691D588819006B0804 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		4F2AA6B01D2550E4009B82B3 /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		4F2AA6B21D25580B009B82B3 /* RealmExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
 		4F2AA6B41D255B61009B82B3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		4F7F017C1D2522CE0036E052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F7F017E1D2522CE0036E052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FCF69CA1D25BC78003C9776 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		4FF198F21D25274600240FAE /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		4FF198F21D25274600240FAE /* AppWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWebService.swift; sourceTree = "<group>"; };
 		4FF198F41D252BD900240FAE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4FF198F61D252BDF00240FAE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4FF198F81D252BE500240FAE /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -96,7 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				4FF198FE1D254AF600240FAE /* Endpoints.swift */,
-				4FF198F21D25274600240FAE /* WebService.swift */,
+				4FF198F21D25274600240FAE /* AppWebService.swift */,
+				4F1960691D588819006B0804 /* HTTPClient.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -350,13 +353,14 @@
 				4FF198FD1D252CE100240FAE /* UserCompany.swift in Sources */,
 				4FF198F91D252BE500240FAE /* Comment.swift in Sources */,
 				4F2AA6B91D256ABF009B82B3 /* LoadingView.swift in Sources */,
-				4FF198F31D25274600240FAE /* WebService.swift in Sources */,
+				4FF198F31D25274600240FAE /* AppWebService.swift in Sources */,
 				4F2AA6B51D255B61009B82B3 /* PostTableViewCell.swift in Sources */,
 				4F7F01751D2522CE0036E052 /* PostViewController.swift in Sources */,
 				4F7F01731D2522CE0036E052 /* AppDelegate.swift in Sources */,
 				4FF198FF1D254AF600240FAE /* Endpoints.swift in Sources */,
 				4FF198F71D252BDF00240FAE /* Post.swift in Sources */,
 				4FCF69CB1D25BC78003C9776 /* Errors.swift in Sources */,
+				4F19606A1D588819006B0804 /* HTTPClient.swift in Sources */,
 				4F2AA6C71D25A3C2009B82B3 /* ViewModelType.swift in Sources */,
 				4F2AA6B11D2550E4009B82B3 /* PostViewModel.swift in Sources */,
 				4F2AA6B71D255C88009B82B3 /* TableViewExtensions.swift in Sources */,

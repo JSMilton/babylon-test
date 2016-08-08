@@ -13,9 +13,9 @@ class PostDetailViewModel: ViewModelType {
     
     let post: Post
     let user: User
-    var webService = WebService()
     var comments: Results<Comment>?
     var loading: Bool = false
+    var httpClient = HTTPClient(webService: AppWebService())
     
     init(post: Post, user: User) {
         self.post = post
@@ -27,7 +27,7 @@ class PostDetailViewModel: ViewModelType {
     
     func load(completion: ((Error?)->())?) {
         loading = true
-        webService.load(Comment.all) { (comments, error) in
+        httpClient.load(Comment.all) { (comments, error) in
             if let comments = comments {
                 self.updateObjects(comments)
             }
