@@ -9,13 +9,14 @@
 import Foundation
 import RealmSwift
 
-class PostDetailViewModel: ViewModelType {
+final class PostDetailViewModel {
     
     let post: Post
     let user: User
     var comments: Results<Comment>?
     var loading: Bool = false
     var httpClient = HTTPClient(webService: AppWebService())
+    var database = Database(database: RealmDatabase())
     
     init(post: Post, user: User) {
         self.post = post
@@ -29,7 +30,7 @@ class PostDetailViewModel: ViewModelType {
         loading = true
         httpClient.load(Comment.all) { (comments, error) in
             if let comments = comments {
-                self.updateObjects(comments)
+                self.database.updateObjects(comments)
             }
             
             completion?(error)

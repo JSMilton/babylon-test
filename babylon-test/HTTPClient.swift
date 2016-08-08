@@ -12,7 +12,7 @@ protocol WebService {
     func load<A>(resource: Resource<A>, completion: (A?, Error?) -> ())
 }
 
-struct HTTPClient {
+class HTTPClient {
     
     let webService: WebService
     

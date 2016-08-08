@@ -18,7 +18,8 @@
 		4F2AA6BD1D2573E7009B82B3 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6BC1D2573E7009B82B3 /* UIViewControllerExtensions.swift */; };
 		4F2AA6C21D257F6E009B82B3 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6C01D257F6E009B82B3 /* PostDetailViewController.swift */; };
 		4F2AA6C51D25A2CC009B82B3 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6C41D25A2CC009B82B3 /* PostDetailViewModel.swift */; };
-		4F2AA6C71D25A3C2009B82B3 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AA6C61D25A3C2009B82B3 /* ViewModelType.swift */; };
+		4F6457B71D5890A30012B144 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6457B61D5890A30012B144 /* Database.swift */; };
+		4F6457B91D5891710012B144 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6457B81D5891710012B144 /* RealmDatabase.swift */; };
 		4F7F01731D2522CE0036E052 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F01721D2522CE0036E052 /* AppDelegate.swift */; };
 		4F7F01751D2522CE0036E052 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F01741D2522CE0036E052 /* PostViewController.swift */; };
 		4F7F017A1D2522CE0036E052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F7F01791D2522CE0036E052 /* Assets.xcassets */; };
@@ -44,7 +45,8 @@
 		4F2AA6BC1D2573E7009B82B3 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		4F2AA6C01D257F6E009B82B3 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		4F2AA6C41D25A2CC009B82B3 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
-		4F2AA6C61D25A3C2009B82B3 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		4F6457B61D5890A30012B144 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		4F6457B81D5891710012B144 /* RealmDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		4F7F016F1D2522CE0036E052 /* babylon-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "babylon-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7F01721D2522CE0036E052 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F7F01741D2522CE0036E052 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,8 @@
 				4FF198FE1D254AF600240FAE /* Endpoints.swift */,
 				4FF198F21D25274600240FAE /* AppWebService.swift */,
 				4F1960691D588819006B0804 /* HTTPClient.swift */,
+				4F6457B61D5890A30012B144 /* Database.swift */,
+				4F6457B81D5891710012B144 /* RealmDatabase.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -154,14 +158,6 @@
 			name = "Loading View Controller";
 			sourceTree = "<group>";
 		};
-		4F2AA6D01D25B294009B82B3 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				4F2AA6C61D25A3C2009B82B3 /* ViewModelType.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
 		4F7F01661D2522CE0036E052 = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +181,6 @@
 			children = (
 				4F2AA6C81D25B1E8009B82B3 /* App Delegate */,
 				4F2AA6C91D25B1EF009B82B3 /* View Controllers */,
-				4F2AA6D01D25B294009B82B3 /* Protocols */,
 				4F2AA6CA1D25B201009B82B3 /* Services */,
 				4F2AA6CB1D25B20B009B82B3 /* Models */,
 				4F2AA6CC1D25B23B009B82B3 /* Extensions */,
@@ -355,13 +350,14 @@
 				4F2AA6B91D256ABF009B82B3 /* LoadingView.swift in Sources */,
 				4FF198F31D25274600240FAE /* AppWebService.swift in Sources */,
 				4F2AA6B51D255B61009B82B3 /* PostTableViewCell.swift in Sources */,
+				4F6457B71D5890A30012B144 /* Database.swift in Sources */,
 				4F7F01751D2522CE0036E052 /* PostViewController.swift in Sources */,
 				4F7F01731D2522CE0036E052 /* AppDelegate.swift in Sources */,
 				4FF198FF1D254AF600240FAE /* Endpoints.swift in Sources */,
 				4FF198F71D252BDF00240FAE /* Post.swift in Sources */,
 				4FCF69CB1D25BC78003C9776 /* Errors.swift in Sources */,
+				4F6457B91D5891710012B144 /* RealmDatabase.swift in Sources */,
 				4F19606A1D588819006B0804 /* HTTPClient.swift in Sources */,
-				4F2AA6C71D25A3C2009B82B3 /* ViewModelType.swift in Sources */,
 				4F2AA6B11D2550E4009B82B3 /* PostViewModel.swift in Sources */,
 				4F2AA6B71D255C88009B82B3 /* TableViewExtensions.swift in Sources */,
 			);

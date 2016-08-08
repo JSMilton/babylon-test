@@ -9,12 +9,13 @@
 import Foundation
 import RealmSwift
 
-final class PostViewModel: ViewModelType {
+final class PostViewModel {
     
     var loading = false
     var users: Results<User>
     var posts: Results<Post>
     var httpClient = HTTPClient(webService: AppWebService())
+    var database = Database(database: RealmDatabase())
     
     init() {
         let realm = try! Realm()
@@ -27,8 +28,8 @@ final class PostViewModel: ViewModelType {
         httpClient.load(User.all) { (users, error) in
             self.httpClient.load(Post.all) { (posts, error) in
                 if let users = users, posts = posts {
-                    self.updateObjects(users)
-                    self.updateObjects(posts)
+                    self.database.updateObjects(users)
+                    self.database.updateObjects(posts)
                 }
                 
                 completion?(error)
