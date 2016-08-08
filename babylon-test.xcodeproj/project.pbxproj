@@ -32,9 +32,25 @@
 		4FF198FB1D252CCD00240FAE /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198FA1D252CCD00240FAE /* UserAddress.swift */; };
 		4FF198FD1D252CE100240FAE /* UserCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198FC1D252CE100240FAE /* UserCompany.swift */; };
 		4FF198FF1D254AF600240FAE /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF198FE1D254AF600240FAE /* Endpoints.swift */; };
+		BEAD3AEF1D58E0DD00C5E772 /* babylon_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD3AED1D58E0DD00C5E772 /* babylon_testTests.swift */; };
+		BEAD3AF01D58E0DD00C5E772 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEAD3AEE1D58E0DD00C5E772 /* Info.plist */; };
+		C07969204B883B20A3C0C52C /* Pods_babylon_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3073C0BD3C8027C276F6BF22 /* Pods_babylon_testTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BEAD3AE81D58E06000C5E772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F7F01671D2522CE0036E052 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F7F016E1D2522CE0036E052;
+			remoteInfo = "babylon-test";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1BEE2CFE2E3F7ECA852CC060 /* Pods-babylon-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babylon-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-babylon-testTests/Pods-babylon-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3073C0BD3C8027C276F6BF22 /* Pods_babylon_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_babylon_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B909BF429B028E7747148C7 /* Pods-babylon-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babylon-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-babylon-testTests/Pods-babylon-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F1960691D588819006B0804 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		4F2AA6B01D2550E4009B82B3 /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		4F2AA6B21D25580B009B82B3 /* RealmExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
@@ -64,6 +80,9 @@
 		8A4DC9E76BC188377556AD94 /* Pods_babylon_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_babylon_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		947E09CA9D942473356BD4C7 /* Pods-babylon-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babylon-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-babylon-test/Pods-babylon-test.release.xcconfig"; sourceTree = "<group>"; };
 		B81125B2D8A644FB947F9BF9 /* Pods-babylon-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babylon-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-babylon-test/Pods-babylon-test.debug.xcconfig"; sourceTree = "<group>"; };
+		BEAD3AE31D58E06000C5E772 /* babylon-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "babylon-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAD3AED1D58E0DD00C5E772 /* babylon_testTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = babylon_testTests.swift; sourceTree = "<group>"; };
+		BEAD3AEE1D58E0DD00C5E772 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +91,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B63AA32618854DBA9EFD2C /* Pods_babylon_test.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAD3AE01D58E06000C5E772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C07969204B883B20A3C0C52C /* Pods_babylon_testTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				4F7F01711D2522CE0036E052 /* babylon-test */,
+				BEAD3AE41D58E06000C5E772 /* babylon-testTests */,
 				4F7F01701D2522CE0036E052 /* Products */,
 				604DA6AFBD78F78C9F7297BE /* Pods */,
 				87096C31FAABC837A8374C60 /* Frameworks */,
@@ -172,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				4F7F016F1D2522CE0036E052 /* babylon-test.app */,
+				BEAD3AE31D58E06000C5E772 /* babylon-testTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +234,8 @@
 			children = (
 				B81125B2D8A644FB947F9BF9 /* Pods-babylon-test.debug.xcconfig */,
 				947E09CA9D942473356BD4C7 /* Pods-babylon-test.release.xcconfig */,
+				1BEE2CFE2E3F7ECA852CC060 /* Pods-babylon-testTests.debug.xcconfig */,
+				3B909BF429B028E7747148C7 /* Pods-babylon-testTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -213,8 +244,18 @@
 			isa = PBXGroup;
 			children = (
 				8A4DC9E76BC188377556AD94 /* Pods_babylon_test.framework */,
+				3073C0BD3C8027C276F6BF22 /* Pods_babylon_testTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEAD3AE41D58E06000C5E772 /* babylon-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEAD3AED1D58E0DD00C5E772 /* babylon_testTests.swift */,
+				BEAD3AEE1D58E0DD00C5E772 /* Info.plist */,
+			);
+			path = "babylon-testTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,12 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F7F01811D2522CE0036E052 /* Build configuration list for PBXNativeTarget "babylon-test" */;
 			buildPhases = (
-				493C7DA7A430AEB8DB0C6F87 /* 📦 Check Pods Manifest.lock */,
+				493C7DA7A430AEB8DB0C6F87 /* [CP] Check Pods Manifest.lock */,
 				4F7F016B1D2522CE0036E052 /* Sources */,
 				4F7F016C1D2522CE0036E052 /* Frameworks */,
 				4F7F016D1D2522CE0036E052 /* Resources */,
-				BE7459FF4340F26C3A569535 /* 📦 Embed Pods Frameworks */,
-				4B10E2D0C2B2A8A25588BFD3 /* 📦 Copy Pods Resources */,
+				BE7459FF4340F26C3A569535 /* [CP] Embed Pods Frameworks */,
+				4B10E2D0C2B2A8A25588BFD3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,6 +280,27 @@
 			productName = "babylon-test";
 			productReference = 4F7F016F1D2522CE0036E052 /* babylon-test.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BEAD3AE21D58E06000C5E772 /* babylon-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEAD3AEC1D58E06000C5E772 /* Build configuration list for PBXNativeTarget "babylon-testTests" */;
+			buildPhases = (
+				7D5473D62429B20003F83BFD /* [CP] Check Pods Manifest.lock */,
+				BEAD3ADF1D58E06000C5E772 /* Sources */,
+				BEAD3AE01D58E06000C5E772 /* Frameworks */,
+				BEAD3AE11D58E06000C5E772 /* Resources */,
+				0CB19382372DE26BBAFD598B /* [CP] Embed Pods Frameworks */,
+				CC6A87E718CEB4CF769D879B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEAD3AE91D58E06000C5E772 /* PBXTargetDependency */,
+			);
+			name = "babylon-testTests";
+			productName = "babylon-testTests";
+			productReference = BEAD3AE31D58E06000C5E772 /* babylon-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -252,6 +314,9 @@
 				TargetAttributes = {
 					4F7F016E1D2522CE0036E052 = {
 						CreatedOnToolsVersion = 7.3;
+					};
+					BEAD3AE21D58E06000C5E772 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -269,6 +334,7 @@
 			projectRoot = "";
 			targets = (
 				4F7F016E1D2522CE0036E052 /* babylon-test */,
+				BEAD3AE21D58E06000C5E772 /* babylon-testTests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,17 +349,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEAD3AE11D58E06000C5E772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAD3AF01D58E0DD00C5E772 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		493C7DA7A430AEB8DB0C6F87 /* 📦 Check Pods Manifest.lock */ = {
+		0CB19382372DE26BBAFD598B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-babylon-testTests/Pods-babylon-testTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		493C7DA7A430AEB8DB0C6F87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +390,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4B10E2D0C2B2A8A25588BFD3 /* 📦 Copy Pods Resources */ = {
+		4B10E2D0C2B2A8A25588BFD3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,19 +405,49 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-babylon-test/Pods-babylon-test-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE7459FF4340F26C3A569535 /* 📦 Embed Pods Frameworks */ = {
+		7D5473D62429B20003F83BFD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BE7459FF4340F26C3A569535 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-babylon-test/Pods-babylon-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC6A87E718CEB4CF769D879B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-babylon-testTests/Pods-babylon-testTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -363,7 +482,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEAD3ADF1D58E06000C5E772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAD3AEF1D58E0DD00C5E772 /* babylon_testTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEAD3AE91D58E06000C5E772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F7F016E1D2522CE0036E052 /* babylon-test */;
+			targetProxy = BEAD3AE81D58E06000C5E772 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4F7F017B1D2522CE0036E052 /* LaunchScreen.storyboard */ = {
@@ -486,6 +621,31 @@
 			};
 			name = Release;
 		};
+		BEAD3AEA1D58E06000C5E772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEE2CFE2E3F7ECA852CC060 /* Pods-babylon-testTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "babylon-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.james-milton.babylon-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BEAD3AEB1D58E06000C5E772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B909BF429B028E7747148C7 /* Pods-babylon-testTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "babylon-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.james-milton.babylon-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -503,6 +663,15 @@
 			buildConfigurations = (
 				4F7F01821D2522CE0036E052 /* Debug */,
 				4F7F01831D2522CE0036E052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEAD3AEC1D58E06000C5E772 /* Build configuration list for PBXNativeTarget "babylon-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEAD3AEA1D58E06000C5E772 /* Debug */,
+				BEAD3AEB1D58E06000C5E772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

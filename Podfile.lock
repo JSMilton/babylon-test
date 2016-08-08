@@ -1,5 +1,7 @@
 PODS:
+  - Nimble (4.1.0)
   - PureLayout (3.0.2)
+  - Quick (0.9.3)
   - Realm (1.0.1):
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
@@ -8,16 +10,20 @@ PODS:
   - Unbox (1.7)
 
 DEPENDENCIES:
+  - Nimble
   - PureLayout
+  - Quick
   - RealmSwift
   - Unbox
 
 SPEC CHECKSUMS:
+  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   Unbox: 576f1470399f84c411ced0a8ce4c4caaeb8acf1d
 
-PODFILE CHECKSUM: 99383dbc9f095da0452e785ab22cdef63f8a3f15
+PODFILE CHECKSUM: 16c62db25abb32928079bbb07c7ba05a64f99679
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1
