@@ -6,22 +6,22 @@
 //  Copyright © 2016 james milton. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
+import Unbox
 
-class babylon_testTests: XCTestCase {
+class UserSpec: QuickSpec {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let userJSON: [String: AnyObject] = NSBundle(forClass: object_getClass(UserSpec)).JSONObjectWithName("single-user")
+    
+    override func spec() {
+        
+        it("parses a single user correctly") {
+            let user: User = try! Unbox(self.userJSON)
+            expect(user.id).to(equal(1))
+            expect(user.name).to(equal("Leanne Graham"))
+            expect(user.username).to(equal("Bret"))
+            expect(user.email).to(equal("Sincere@april.biz"))
+        }
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        XCTAssert(true)
-    }
-    
 }

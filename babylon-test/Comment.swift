@@ -31,14 +31,3 @@ class Comment: Object, Unboxable {
         return "id"
     }
 }
-
-extension Comment {
-    static let all = Resource<[Comment]>(endpoint: .Comments) { data in
-        do {
-            let posts: [Comment] = try Unbox(data)
-            return posts
-        } catch {
-            return nil
-        }
-    }
-}

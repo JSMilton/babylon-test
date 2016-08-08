@@ -29,14 +29,3 @@ class Post: Object, Unboxable {
         return "id"
     }
 }
-
-extension Post {
-    static let all = Resource<[Post]>(endpoint: .Posts) { data in
-        do {
-            let posts: [Post] = try Unbox(data)
-            return posts
-        } catch {
-            return nil
-        }
-    }
-}

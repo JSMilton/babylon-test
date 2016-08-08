@@ -37,14 +37,3 @@ class User: Object, Unboxable {
         return "id"
     }
 }
-
-extension User {
-    static let all = Resource<[User]>(endpoint: .Users) { data in
-        do {
-            let users: [User] = try Unbox(data)
-            return users
-        } catch {
-            return nil
-        }
-    }
-}
