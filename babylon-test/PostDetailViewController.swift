@@ -88,19 +88,20 @@ class PostDetailViewController: UIViewController, LoadingViewControllerType {
         notificationToken = viewModel.comments?.addNotificationBlock { [weak self] _ in
             self?.updateCommentsLabel()
         }
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setLoading(true)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel.load { [weak self] error in
             self?.setLoading(false)
             if let error = error {
                 self?.showError(error)
             }
-        }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if viewModel.loading {
-            setLoading(true)
         }
     }
     
